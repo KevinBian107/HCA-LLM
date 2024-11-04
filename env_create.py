@@ -112,27 +112,26 @@ def with_action_syntactic_check_func(
     model_name,
     dialogue_history_method,
 ):
+    '''This only checks if the actions are valid, doesn't care about if it's json,
+    if not json, directly fails it.'''
     user_prompt_list = copy.deepcopy(user_prompt_list_input)
     response_total_list = copy.deepcopy(response_total_list_input)
     iteration_num = 0
     token_num_count_list_add = []
     while iteration_num < 6:
-
-        # valid = is_valid_json(response)
-        print("RESPONSE", response)
-      
-        # while not valid:
-        #     messages = [
-        #                 {"role": "system", "content": "You are a helpful assistant specialized for fixing Json format."},
-        #                 {"role": "user", "content": f"Please fix the Json message in here {response} and give only this JSON as output"},
-        #                 ]
-        #     response, token_num_count = LLaMA_response(messages, model_name)
-        #     token_num_count_list_add.append(token_num_count)
-
-        #     valid = is_valid_json(response)
-
-        #     print(response)
-
+        valid = is_valid_json(response)
+        count=0
+        # print("RESPONSE", response)
+        while not valid:
+            count+=1
+            print(f'----------JSON Syntactic Check {count} TIME----------')
+            messages = [
+                        {"role": "system", "content": "You are a helpful assistant specialized for fixing Json format."},
+                        {"role": "user", "content": f"Please fix the Json message in here {response} and give only this JSON as output"},
+                        ]
+            response, token_num_count = LLaMA_response(messages, model_name)
+            token_num_count_list_add.append(token_num_count)
+            valid = is_valid_json(response)
 
         response_total_list.append(response)
         # print(iteration_num, response_total_list)

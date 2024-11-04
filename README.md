@@ -106,7 +106,7 @@ Install the dependencies by:
 conda env create
 ```
 
-Instantiate agent by:
+Instantiate LLM agent by (this need to be done in your system terminal directly, not in VScode):
 
 ```
 ollama run qwen2.5:14b-instruct-q3_K_L
@@ -119,10 +119,11 @@ python run_rplh.py
 ```
 
 ## TODO:
-1. Make synthetic check better and re better for getting json format answer.
-2. Try bigger models for base LLM
-3. Adaptation to the VirtualHome environment
-4. Use fine-tuned MCTS-World-Model LLM for task
+1. Make synthetic check better and re better for getting json format answer (finished).
+  - Try bigger models for base LLM.
+  - Check complexity of the algorithm.
+2. Adaptation to the VirtualHome environment
+3. Use fine-tuned MCTS-World-Model LLM for task
 
 ## Adapting on:
 1. https://yongchao98.github.io/MIT-REALM-Multi-Robot/

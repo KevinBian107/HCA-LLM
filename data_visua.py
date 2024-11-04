@@ -4,9 +4,9 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-Code_dir_path = os.path.join(os.getcwd(), 'mit-multiagent', 'results')
+Code_dir_path = os.path.join(os.getcwd(), 'results')
 os.makedirs(Code_dir_path, exist_ok=True)
-saving_path = Code_dir_path + 'Env2_BoxNet2'
+saving_path = Code_dir_path
 
 candidate_list = [('CMAS','_wo_any_dialogue_history'), ('CMAS','_w_only_state_action_history'),
                   ('HMAS-2','_wo_any_dialogue_history'), ('HMAS-2','_w_only_state_action_history'),

@@ -170,9 +170,11 @@ def run_exp(Saving_path,
             match = re.search(r'{.*}', response_central_again, re.DOTALL)
             if match:
               response = match.group()
+
+              #TODO: need to check this function again
               response, token_num_count_list_add = with_action_syntactic_check_func(data_dict['pg_dict'],
                                                                                     response_central_again, 
-                                                                                    [cen_response, local_response, judge_prompt], 
+                                                                                    [judge_prompt], 
                                                                                     [response],
                                                                                     model_name,
                                                                                     '_w_all_dialogue_history'
