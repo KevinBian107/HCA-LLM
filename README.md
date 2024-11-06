@@ -115,7 +115,7 @@ ollama run qwen2.5:14b-instruct-q3_K_L
 Then running main inference by:
 
 ```
-python run_rplh.py
+python minimal_contained/run_rplh.py
 ```
 
 ## TODO:

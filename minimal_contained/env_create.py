@@ -122,6 +122,7 @@ def with_action_syntactic_check_func(
         valid = is_valid_json(response)
         count=0
         # print("RESPONSE", response)
+        #TODO: need to check this
         while not valid:
             count+=1
             print(f'----------JSON Syntactic Check {count} TIME----------')
